@@ -17,7 +17,7 @@ def removeEmptyLines(text):
 
 # Collect multi-line input from the user
 while True:
-    print('Enter Text (ENTER two-empty lines to input): ')
+    print('Enter Text (ENTER two-empty lines, or "//" to input): ')
     userInput = []
     emptyLineCount = 0
     while True:
@@ -26,7 +26,9 @@ while True:
             emptyLineCount += 1
         else:
             emptyLineCount = 0
-        if emptyLineCount == 2:
+        if emptyLineCount == 2: # comment out if you need more empty lines
+            break # comment out if you need more empty lines
+        if line == '//':
             break
         userInput.append(line)
     inputText = '\n'.join(userInput)
